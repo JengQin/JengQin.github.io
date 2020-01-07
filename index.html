@@ -1,324 +1,94 @@
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>菜鸟教程(runoob.com)</title>
-	
-<link href="http://apps.bdimg.com/libs/highlight.js/9.1.0/styles/solarized_light.min.css" rel="stylesheet">
-<script src="http://apps.bdimg.com/libs/highlight.js/9.1.0/highlight.min.js"></script>
-<script type="text/javascript">
-    SyntaxHighlighter.all();
-</script>	
-<style>
+  <title>Evernote Export</title>
+
+  <style>
+/* ----------调用字体---------- */
+
+@font-face { font-family: yh; src: url('_FZYHJW.ttf'); }
+@font-face { font-family: times; src: url('_times.ttf'); }
+
+
+/* ----------各种样式---------- */
+
+body { background-color: #fff; color: black; }
 .card {
- font-family: arial;
- font-size: 20px;
- text-align: left;
- color: black;
- background-color: white;
+	font: 20px/30px yh;
+	background-color:#fff;
+	#background-image: url(_bg.png);
+	#background-size:100%;
 }
 
-.tag_field {
- font-family: Arial;
- font-size: 16px;
- color: blue;
-}
+.h1 { font: 22px/22px yh; padding: 0.3em 0em 0.3em 0.5em; }
+.h2 { font: 20px/30px yh; padding: 0.3em 0em 0.3em 0.5em; }
 
-.tag_value {
-margin-right:1%;
-font-size: 16px;
-}
+.xleft { border-left: 3px solid #ec6c4f; }
+.yleft { border-left: 3px solid #338eca; }
+.zleft { border-left: 3px solid #4c991b; }
 
-.hljs{
-font-size: 16px;
+.xcolor { color: #ec6c4f; }
+.ycolor { color: #338eca; }
+.zcolor { color: #4c991b; }
+
+.ximg { background: url(_x-day.svg); background-size: 100%; background-repeat: no-repeat; background-position: center; }
+.yimg { background: url(_y-day.svg); background-size: 100%; background-repeat: no-repeat; background-position: center; }
+.zimg { background: url(_z-day.svg); background-size: 100%; background-repeat: no-repeat; background-position: center; }
+
+.hint { color: #333; }
+
+
+/* ---------- 其他调整 ---------- */
+
+a { color: #666; }
+img { max-width: 100%; vertical-align: middle; }
+	.chrome img { max-width: 100%; vertical-align: middle; }
+ul,ol { margin-top: 0em; }
+li { margin-left: -0.5em; }
+i { font-family: palatino; padding: 0 3px 0 0; }
+u { text-decoration: none; background-color: #ffff75; border-bottom: 2px solid #ec6c4f; }
+hr { height: 1px; width: 100%; display: block; border: 0px solid #fff; vertical-align: middle; margin:5px 0px 10px 0px; background-color: #ccc;}
+#time { font-family: yh; float: right; } 
+
+
+/* ----------动画效果---------- */
+
+.slide { position: relative; -webkit-animation: slide 1s 0s; -webkit-animation-fill-mode: forwards; }
+
+@-webkit-keyframes slide {
+	0%	{ opacity: 0  ; top: 100px; }
+	50%	{ opacity: 0.8; top: -10px; }
+	100%	{ opacity: 1.0; top: -3px; }
 }
-</style>
+  </style>
 </head>
-
 <body>
-
-<div style='font-family: Arial; font-size: 20px;'>{{题目}}</div>
-<div style='font-family: Arial; font-size: 20px;'>{{题目内容}}</div>
-<div>
-<span class="tag_field">难度:</span>
-<span class="tag_value">{{难度}}</span>
-<span class="tag_field">标签:</span>
-<span class="tag_value">{{Tags}}</span>
-<span class="tag_field">力扣:</span>
-<a href="{{链接}}" class="tag_value">前往leetcode</a>
-<a href="{{参考题解}}" class="tag_value">参考题解</a>
+<div class="h1 xcolor xleft">
+	<span class="ximg"></span>
+		问题
 </div>
-<hr id=answer>
+
+<div class="h2 xleft">{{问题}}</div>
 
 
-<section class="_135editor" data-tools="135编辑器" data-id="92943">
-    <section class="_135editor" data-color="#fde2d8" data-custom="#fde2d8" style="background-color: rgba(0, 0, 0, 0); padding: 0px;" >
-        <section style="width: 100%; padding: 10px 0px; box-sizing: border-box;" data-width="100%">
-            <section style="padding: 10px 0px; display: flex; justify-content: flex-start; text-align: left; height: 20px; line-height: 20px; box-sizing: border-box;">
-                <section style="font-weight: bold;display: inline-block;font-size:18px;">
-                    <span style="color: #cc3f0a; font-size: 16px; background-color: ; caret-color: red;">{{方法1}}</span>
-                </section>
-            </section>
-            <section style="padding: 10px 2px; margin-top: 10px; box-sizing: border-box;">
-                <section style="margin-top: 0.3em;">
-                    <section style="margin-top: 0.3em;">
-                        <section style="width: 100%;margin-left: 4px;margin-top:0.3em;" data-width="100%">
-                            <section class="_135editor" data-tools="135编辑器" data-id="94785">
-                                <section style="padding: 10px 1px 10px 1px;">
-                                    <section style="margin-left:-15px;margin-bottom:-24px;overflow: hidden; padding: 0px;display:flex;align-items: center;">
-                                        <section style="width: 2.2em; height: 2.2em; background: #fde2d8; border-radius: 100%; text-align: center; line-height: 2.2em; font-size: 18px; color: #cc3f0a;">
-                                            1
-                                        </section>
-                                        <section style="margin-left: -10px; display: inline-block; font-size: 1em; font-family: inherit; font-weight: inherit; text-align: inherit; text-decoration: inherit; color: #fefefe; border-color: #fde2d8; background-color: transparent;">
-                                            <section class="135brush" data-bcless="darken" data-brushtype="text" style="letter-spacing: 1.5px; border-left: 8px solid #f89a77; border-top-color: #f89a77; border-right-color: #f89a77; border-bottom-color: #f89a77; display: inline-block; line-height: 1.4em; padding: 5px 10px; height: 32px; vertical-align: top; font-size: 16px; font-family: inherit; float: left; background: #fde2d8; color: #cc3f0a; box-sizing: border-box !important;">
-                                                思路
-                                            </section>
-                                            <section style="width: 0.5em; display: inline-block; height: 32px; vertical-align: top; border-bottom: 1em solid #fde2d8; border-top: 1em solid #fde2d8; font-size: 16px; border-left-color: #fde2d8; color: inherit; box-sizing: border-box !important; border-right: 1em solid transparent !important;"></section>
-                                        </section>
-                                    </section>
-                                    <section style="border: 1px solid #fde2d8; box-sizing: border-box; background: #fde2d8; border-radius: 6px; color: #cc3f0a;">
-                                        <section style="border: 1px solid #fde2d8; margin: 5px -5px -5px 5px; border-radius: 6px; box-sizing: border-box; background-color: #fefefe;">
-                                            <section data-autoskip="1" class="135brush" style="font-size: 14px;text-align: justify;letter-spacing: 1.5px;line-height: 1.75em;color: #3f3f3f;padding:1.5em 1em 1em 1em;">
-                                                <p>
-                                                    {{思路1}}
-                                                </p>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                            <section class="_135editor" data-tools="135编辑器" data-id="94785">
-                                <section style="padding: 10px 1px 10px 1px;">
-                                    <section style="margin-left:-15px;margin-bottom:-24px;overflow: hidden; padding: 0px;display:flex;align-items: center;">
-                                        <section style="width: 2.2em; height: 2.2em; background: #fde2d8; border-radius: 100%; text-align: center; line-height: 2.2em; font-size: 18px; color: #cc3f0a;">
-                                            2
-                                        </section>
-                                        <section style="margin-left: -10px; display: inline-block; font-size: 1em; font-family: inherit; font-weight: inherit; text-align: inherit; text-decoration: inherit; color: #fefefe; border-color: #fde2d8; background-color: transparent;">
-                                            <section class="135brush" data-bcless="darken" data-brushtype="text" style="letter-spacing: 1.5px; border-left: 8px solid #f89a77; border-top-color: #f89a77; border-right-color: #f89a77; border-bottom-color: #f89a77; display: inline-block; line-height: 1.4em; padding: 5px 10px; height: 32px; vertical-align: top; font-size: 16px; font-family: inherit; float: left; background: #fde2d8; color: #cc3f0a; box-sizing: border-box !important;">
-                                                代码
-                                            </section>
-                                            <section style="width: 0.5em; display: inline-block; height: 32px; vertical-align: top; border-bottom: 1em solid #fde2d8; border-top: 1em solid #fde2d8; font-size: 16px; border-left-color: #fde2d8; color: inherit; box-sizing: border-box !important; border-right: 1em solid transparent !important;"></section>
-                                        </section>
-                                    </section>
-                                    <section style="border: 1px solid #fde2d8; box-sizing: border-box; background: #fde2d8; border-radius: 6px; color: #cc3f0a;">
-                                        <section style="border: 1px solid #fde2d8; margin: 5px -5px -5px 5px; border-radius: 6px; box-sizing: border-box; background-color: #fefefe;">
-                                            <section data-autoskip="1" class="135brush" style="font-size: 14px;text-align: justify;letter-spacing: 1.5px;line-height: 1.75em;color: #3f3f3f;padding:1.5em 1em 1em 1em;">
-                                                <pre class="hljs"><code class="java">{{hint:代码1}}</code></pre>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                            <section class="_135editor" data-tools="135编辑器" data-id="94785">
-                                <section style="padding: 10px 1px 10px 1px;">
-                                    <section style="margin-left:-15px;margin-bottom:-24px;overflow: hidden; padding: 0px;display:flex;align-items: center;">
-                                        <section style="width: 2.2em; height: 2.2em; background: #fde2d8; border-radius: 100%; text-align: center; line-height: 2.2em; font-size: 18px; color: #cc3f0a;">
-                                            3
-                                        </section>
-                                        <section style="margin-left: -10px; display: inline-block; font-size: 1em; font-family: inherit; font-weight: inherit; text-align: inherit; text-decoration: inherit; color: #fefefe; border-color: #fde2d8; background-color: transparent;">
-                                            <section class="135brush" data-bcless="darken" data-brushtype="text" style="letter-spacing: 1.5px; border-left: 8px solid #f89a77; border-top-color: #f89a77; border-right-color: #f89a77; border-bottom-color: #f89a77; display: inline-block; line-height: 1.4em; padding: 5px 10px; height: 32px; vertical-align: top; font-size: 16px; font-family: inherit; float: left; background: #fde2d8; color: #cc3f0a; box-sizing: border-box !important;">
-                                                复杂度
-                                            </section>
-                                            <section style="width: 0.5em; display: inline-block; height: 32px; vertical-align: top; border-bottom: 1em solid #fde2d8; border-top: 1em solid #fde2d8; font-size: 16px; border-left-color: #fde2d8; color: inherit; box-sizing: border-box !important; border-right: 1em solid transparent !important;"></section>
-                                        </section>
-                                    </section>
-                                    <section style="border: 1px solid #fde2d8; box-sizing: border-box; background: #fde2d8; border-radius: 6px; color: #cc3f0a;">
-                                        <section style="border: 1px solid #fde2d8; margin: 5px -5px -5px 5px; border-radius: 6px; box-sizing: border-box; background-color: #fefefe;">
-                                            <section data-autoskip="1" class="135brush" style="font-size: 14px;text-align: justify;letter-spacing: 1.5px;line-height: 1.75em;color: #3f3f3f;padding:1.5em 1em 1em 1em;">
-                                                <p>
-                                                    {{复杂度1}}
-                                                </p>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                </section>
-            </section>
-        </section>
-    </section>
-</section>
 
-<section class="_135editor" data-color="#e5f3d0" data-custom="#e5f3d0">
-    <section style="width: 100%; padding: 10px 0px; box-sizing: border-box;" data-width="100%">
-        <section style="padding: 10px 0px; display: flex; justify-content: flex-start; text-align: left; height: 20px; line-height: 20px; box-sizing: border-box;">
-            <section style="font-weight: bold;display: inline-block;font-size:18px;">
-                <span style="color: #6e9c28; font-size: 16px; caret-color: red;">{{方法2}}</span>
-            </section>
-        </section>
-        <section style="padding: 10px 2px; margin-top: 10px; box-sizing: border-box;">
-            <section style="margin-top: 0.3em;">
-                <section style="margin-top: 0.3em;">
-                    <section style="width: 100%;margin-left: 4px;margin-top:0.3em;" data-width="100%">
-                        <section class="_135editor" data-tools="135编辑器" data-id="94785">
-                            <section style="padding: 10px 1px 10px 1px; box-sizing: border-box;">
-                                <section style="margin-left: -15px; margin-bottom: -24px; overflow: hidden; padding: 0px; display: flex; align-items: center; box-sizing: border-box;">
-                                    <section style="width: 2.2em; height: 2.2em; background: #e5f3d0; border-radius: 100%; text-align: center; line-height: 2.2em; font-size: 18px; box-sizing: border-box; color: #6e9c28;">
-                                        1
-                                    </section>
-                                    <section style="margin-left: -10px; display: inline-block; font-size: 1em; font-weight: inherit; text-align: inherit; text-decoration: inherit; color: #fefefe; border-color: #e5f3d0; background-color: transparent; font-family: inherit; box-sizing: border-box;">
-                                        <section class="135brush" data-bcless="darken" data-brushtype="text" style="letter-spacing: 1.5px; border-left: 8px solid #b8de7f; border-top-color: #b8de7f; border-right-color: #b8de7f; border-bottom-color: #b8de7f; display: inline-block; line-height: 1.4em; padding: 5px 10px; height: 32px; vertical-align: top; font-size: 16px; float: left; background: #e5f3d0; color: #6e9c28; font-family: inherit; box-sizing: border-box !important;">
-                                            思路
-                                        </section>
-                                        <section style="width: 0.5em; display: inline-block; height: 32px; vertical-align: top; border-bottom: 1em solid #e5f3d0; border-top: 1em solid #e5f3d0; font-size: 16px; border-left-color: #e5f3d0; color: inherit; box-sizing: border-box !important; border-right: 1em solid transparent !important;"></section>
-                                    </section>
-                                </section>
-                                <section style="border: 1px solid #e5f3d0; box-sizing: border-box; background: #e5f3d0; border-radius: 6px; color: #6e9c28;">
-                                    <section style="border: 1px solid #e5f3d0; margin: 5px -5px -5px 5px; border-radius: 6px; box-sizing: border-box; background-color: #fefefe;">
-                                        <section data-autoskip="1" class="135brush" style="font-size: 14px; text-align: justify; letter-spacing: 1.5px; line-height: 1.75em; color: #3f3f3f; padding: 1.5em 1em 1em; box-sizing: border-box;">
-                                            <p>
-                                                {{思路2}}
-                                            </p>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                        </section>
-                        <section class="_135editor" data-tools="135编辑器" data-id="94785">
-                            <section style="padding: 10px 1px 10px 1px; box-sizing: border-box;">
-                                <section style="margin-left: -15px; margin-bottom: -24px; overflow: hidden; padding: 0px; display: flex; align-items: center; box-sizing: border-box;">
-                                    <section style="width: 2.2em; height: 2.2em; background: #e5f3d0; border-radius: 100%; text-align: center; line-height: 2.2em; font-size: 18px; box-sizing: border-box; color: #6e9c28;">
-                                        2
-                                    </section>
-                                    <section style="margin-left: -10px; display: inline-block; font-size: 1em; font-weight: inherit; text-align: inherit; text-decoration: inherit; color: #fefefe; border-color: #e5f3d0; background-color: transparent; font-family: inherit; box-sizing: border-box;">
-                                        <section class="135brush" data-bcless="darken" data-brushtype="text" style="letter-spacing: 1.5px; border-left: 8px solid #b8de7f; border-top-color: #b8de7f; border-right-color: #b8de7f; border-bottom-color: #b8de7f; display: inline-block; line-height: 1.4em; padding: 5px 10px; height: 32px; vertical-align: top; font-size: 16px; float: left; background: #e5f3d0; color: #6e9c28; font-family: inherit; box-sizing: border-box !important;">
-                                            代码
-                                        </section>
-                                        <section style="width: 0.5em; display: inline-block; height: 32px; vertical-align: top; border-bottom: 1em solid #e5f3d0; border-top: 1em solid #e5f3d0; font-size: 16px; border-left-color: #e5f3d0; color: inherit; box-sizing: border-box !important; border-right: 1em solid transparent !important;"></section>
-                                    </section>
-                                </section>
-                                <section style="border: 1px solid #e5f3d0; box-sizing: border-box; background: #e5f3d0; border-radius: 6px; color: #6e9c28;">
-                                    <section style="border: 1px solid #e5f3d0; margin: 5px -5px -5px 5px; border-radius: 6px; box-sizing: border-box; background-color: #fefefe;">
-                                        <section data-autoskip="1" class="135brush" style="font-size: 14px; text-align: justify; letter-spacing: 1.5px; line-height: 1.75em; color: #3f3f3f; padding: 1.5em 1em 1em; box-sizing: border-box;">
-                                            <pre class="hljs">{{hint:代码2}}</pre>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                        </section>
-                        <section class="_135editor" data-tools="135编辑器" data-id="94785">
-                            <section style="padding: 10px 1px 10px 1px; box-sizing: border-box;">
-                                <section style="margin-left: -15px; margin-bottom: -24px; overflow: hidden; padding: 0px; display: flex; align-items: center; box-sizing: border-box;">
-                                    <section style="width: 2.2em; height: 2.2em; background: #e5f3d0; border-radius: 100%; text-align: center; line-height: 2.2em; font-size: 18px; box-sizing: border-box; color: #6e9c28;">
-                                        3
-                                    </section>
-                                    <section style="margin-left: -10px; display: inline-block; font-size: 1em; font-weight: inherit; text-align: inherit; text-decoration: inherit; color: #fefefe; border-color: #e5f3d0; background-color: transparent; font-family: inherit; box-sizing: border-box;">
-                                        <section class="135brush" data-bcless="darken" data-brushtype="text" style="letter-spacing: 1.5px; border-left: 8px solid #b8de7f; border-top-color: #b8de7f; border-right-color: #b8de7f; border-bottom-color: #b8de7f; display: inline-block; line-height: 1.4em; padding: 5px 10px; height: 32px; vertical-align: top; font-size: 16px; float: left; background: #e5f3d0; color: #6e9c28; font-family: inherit; box-sizing: border-box !important;">
-                                            复杂度
-                                        </section>
-                                        <section style="width: 0.5em; display: inline-block; height: 32px; vertical-align: top; border-bottom: 1em solid #e5f3d0; border-top: 1em solid #e5f3d0; font-size: 16px; border-left-color: #e5f3d0; color: inherit; box-sizing: border-box !important; border-right: 1em solid transparent !important;"></section>
-                                    </section>
-                                </section>
-                                <section style="border: 1px solid #e5f3d0; box-sizing: border-box; background: #e5f3d0; border-radius: 6px; color: #6e9c28;">
-                                    <section style="border: 1px solid #e5f3d0; margin: 5px -5px -5px 5px; border-radius: 6px; box-sizing: border-box; background-color: #fefefe;">
-                                        <section data-autoskip="1" class="135brush" style="font-size: 14px; text-align: justify; letter-spacing: 1.5px; line-height: 1.75em; color: #3f3f3f; padding: 1.5em 1em 1em; box-sizing: border-box;">
-                                            <p>
-                                                {{复杂度2}}
-                                            </p>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                </section>
-            </section>
-        </section>
-    </section>
-</section>
+	<div class="h2 xleft slide"><hr>{{答案}}</div>
 
-<section class="_135editor" data-color="#b6e4fd" data-custom="#b6e4fd">
-    <section style="width: 100%; padding: 10px 0px; box-sizing: border-box;" data-width="100%">
-        <section style="padding: 10px 0px; display: flex; justify-content: flex-start; text-align: left; height: 20px; line-height: 20px; box-sizing: border-box;">
-            <section style="font-weight: bold;display: inline-block;font-size:18px;">
-                <span style="color: #0573af; font-size: 16px; caret-color: red;">{{方法3}}</span>
-            </section>
-        </section>
-        <section style="padding: 10px 2px; margin-top: 10px; box-sizing: border-box;">
-            <section style="margin-top: 0.3em;">
-                <section style="margin-top: 0.3em;">
-                    <section style="width: 100%;margin-left: 4px;margin-top:0.3em;" data-width="100%">
-                        <section class="_135editor" data-tools="135编辑器" data-id="94785">
-                            <section style="padding: 10px 1px 10px 1px; box-sizing: border-box;">
-                                <section style="margin-left: -15px; margin-bottom: -24px; overflow: hidden; padding: 0px; display: flex; align-items: center; box-sizing: border-box;">
-                                    <section style="width: 2.2em; height: 2.2em; background: #b6e4fd; border-radius: 100%; text-align: center; line-height: 2.2em; font-size: 18px; box-sizing: border-box; color: #0573af;">
-                                        1
-                                    </section>
-                                    <section style="margin-left: -10px; display: inline-block; font-size: 1em; font-weight: inherit; text-align: inherit; text-decoration: inherit; color: #fefefe; border-color: #b6e4fd; background-color: transparent; font-family: inherit; box-sizing: border-box;">
-                                        <section class="135brush" data-bcless="darken" data-brushtype="text" style="letter-spacing: 1.5px; border-left: 8px solid #53bffa; border-top-color: #53bffa; border-right-color: #53bffa; border-bottom-color: #53bffa; display: inline-block; line-height: 1.4em; padding: 5px 10px; height: 32px; vertical-align: top; font-size: 16px; float: left; background: #b6e4fd; color: #0573af; font-family: inherit; box-sizing: border-box !important;">
-                                            思路
-                                        </section>
-                                        <section style="width: 0.5em; display: inline-block; height: 32px; vertical-align: top; border-bottom: 1em solid #b6e4fd; border-top: 1em solid #b6e4fd; font-size: 16px; border-left-color: #b6e4fd; color: inherit; box-sizing: border-box !important; border-right: 1em solid transparent !important;"></section>
-                                    </section>
-                                </section>
-                                <section style="border: 1px solid #b6e4fd; box-sizing: border-box; background: #b6e4fd; border-radius: 6px; color: #0573af;">
-                                    <section style="border: 1px solid #b6e4fd; margin: 5px -5px -5px 5px; border-radius: 6px; box-sizing: border-box; background-color: #fefefe;">
-                                        <section data-autoskip="1" class="135brush" style="font-size: 14px; text-align: justify; letter-spacing: 1.5px; line-height: 1.75em; color: #3f3f3f; padding: 1.5em 1em 1em; box-sizing: border-box;">
-                                            <p>
-                                                {{思路3}}
-                                            </p>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                        </section>
-                        <section class="_135editor" data-tools="135编辑器" data-id="94785">
-                            <section style="padding: 10px 1px 10px 1px; box-sizing: border-box;">
-                                <section style="margin-left: -15px; margin-bottom: -24px; overflow: hidden; padding: 0px; display: flex; align-items: center; box-sizing: border-box;">
-                                    <section style="width: 2.2em; height: 2.2em; background: #b6e4fd; border-radius: 100%; text-align: center; line-height: 2.2em; font-size: 18px; box-sizing: border-box; color: #0573af;">
-                                        2
-                                    </section>
-                                    <section style="margin-left: -10px; display: inline-block; font-size: 1em; font-weight: inherit; text-align: inherit; text-decoration: inherit; color: #fefefe; border-color: #b6e4fd; background-color: transparent; font-family: inherit; box-sizing: border-box;">
-                                        <section class="135brush" data-bcless="darken" data-brushtype="text" style="letter-spacing: 1.5px; border-left: 8px solid #53bffa; border-top-color: #53bffa; border-right-color: #53bffa; border-bottom-color: #53bffa; display: inline-block; line-height: 1.4em; padding: 5px 10px; height: 32px; vertical-align: top; font-size: 16px; float: left; background: #b6e4fd; color: #0573af; font-family: inherit; box-sizing: border-box !important;">
-                                            代码
-                                        </section>
-                                        <section style="width: 0.5em; display: inline-block; height: 32px; vertical-align: top; border-bottom: 1em solid #b6e4fd; border-top: 1em solid #b6e4fd; font-size: 16px; border-left-color: #b6e4fd; color: inherit; box-sizing: border-box !important; border-right: 1em solid transparent !important;"></section>
-                                    </section>
-                                </section>
-                                <section style="border: 1px solid #b6e4fd; box-sizing: border-box; background: #b6e4fd; border-radius: 6px; color: #0573af;">
-                                    <section style="border: 1px solid #b6e4fd; margin: 5px -5px -5px 5px; border-radius: 6px; box-sizing: border-box; background-color: #fefefe;">
-                                        <section data-autoskip="1" class="135brush" style="font-size: 14px; text-align: justify; letter-spacing: 1.5px; line-height: 1.75em; color: #3f3f3f; padding: 1.5em 1em 1em; box-sizing: border-box;">
-                                            <pre class="hljs">{{hint:代码3}}</pre>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                        </section>
-                        <section class="_135editor" data-tools="135编辑器" data-id="94785">
-                            <section style="padding: 10px 1px 10px 1px; box-sizing: border-box;">
-                                <section style="margin-left: -15px; margin-bottom: -24px; overflow: hidden; padding: 0px; display: flex; align-items: center; box-sizing: border-box;">
-                                    <section style="width: 2.2em; height: 2.2em; background: #b6e4fd; border-radius: 100%; text-align: center; line-height: 2.2em; font-size: 18px; box-sizing: border-box; color: #0573af;">
-                                        3
-                                    </section>
-                                    <section style="margin-left: -10px; display: inline-block; font-size: 1em; font-weight: inherit; text-align: inherit; text-decoration: inherit; color: #fefefe; border-color: #b6e4fd; background-color: transparent; font-family: inherit; box-sizing: border-box;">
-                                        <section class="135brush" data-bcless="darken" data-brushtype="text" style="letter-spacing: 1.5px; border-left: 8px solid #53bffa; border-top-color: #53bffa; border-right-color: #53bffa; border-bottom-color: #53bffa; display: inline-block; line-height: 1.4em; padding: 5px 10px; height: 32px; vertical-align: top; font-size: 16px; float: left; background: #b6e4fd; color: #0573af; font-family: inherit; box-sizing: border-box !important;">
-                                            复杂度
-                                        </section>
-                                        <section style="width: 0.5em; display: inline-block; height: 32px; vertical-align: top; border-bottom: 1em solid #b6e4fd; border-top: 1em solid #b6e4fd; font-size: 16px; border-left-color: #b6e4fd; color: inherit; box-sizing: border-box !important; border-right: 1em solid transparent !important;"></section>
-                                    </section>
-                                </section>
-                                <section style="border: 1px solid #b6e4fd; box-sizing: border-box; background: #b6e4fd; border-radius: 6px; color: #0573af;">
-                                    <section style="border: 1px solid #b6e4fd; margin: 5px -5px -5px 5px; border-radius: 6px; box-sizing: border-box; background-color: #fefefe;">
-                                        <section data-autoskip="1" class="135brush" style="font-size: 14px; text-align: justify; letter-spacing: 1.5px; line-height: 1.75em; color: #3f3f3f; padding: 1.5em 1em 1em; box-sizing: border-box;">
-                                            <p>
-                                                {{复杂度3}}
-                                            </p>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                        </section>
-                        <p style="text-align:justify; font-size: 14px; letter-spacing: 1.5px; line-height: 1.75em; color: #0573af; padding: 0em 0px 1em 20px; box-sizing: border-box;" align="justify">
-                            <br/>
-                        </p>
-                    </section>
-                </section>
-            </section>
-        </section>
-    </section>
-</section>
+<br><div class="slide">
+	<div class="h1 ycolor yleft">
+	<span class="yimg"></span>
+		笔记
+	</div>
+	<div class="h2 yleft">{{笔记}}</div></div>
+
+<br><div class="slide">
+		<div class="h1 zcolor zleft">
+		<span class="zimg"></span>
+			代码示例
+		</div>
+		<div class="h2 zleft">
+			<pre class="hljs">{{hint:代码示例}}</pre>
+		</div>
+	</div>
 
 </body>
 </html>
